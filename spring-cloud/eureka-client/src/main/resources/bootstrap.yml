@@ -1,0 +1,10 @@
+# 参考重新定义Spring Cloud实战 - ch12-5
+spring:
+    cloud:
+        config:
+            label: master
+            uri: http://localhost:10101
+            name: config-info
+            profile: prod
+            refreshInterval: 60
+
