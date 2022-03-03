@@ -8,24 +8,45 @@ import org.springframework.web.bind.annotation.RestController;
  * @author hurui
  */
 @RestController
-public class ConsumerController {
+@RequestMapping("feign")
+public class ConsumerController1 {
 
     private HelloClient helloClient;
 
-    public ConsumerController(HelloClient helloClient) {
+
+    public ConsumerController1(HelloClient helloClient) {
         this.helloClient = helloClient;
     }
 
-    @RequestMapping("/serverInfo")
-    public String index() {
-        return helloClient.serverInfo();
-    }
-
+    /**
+     * http://localhost:8800/feign/hello
+     *
+     * @return
+     */
     @RequestMapping("/hello")
     public String hello() {
         return helloClient.hello();
     }
 
+
+
+    /**
+     * http://localhost:8800/feign/serverInfo
+     *
+     * @return
+     */
+    @RequestMapping("/serverInfo")
+    public String index() {
+        return helloClient.serverInfo();
+    }
+
+
+    /**
+     * http://localhost:8800/feign/sayHello?userName=ddy
+     *
+     * @param userName
+     * @return
+     */
     @RequestMapping("/sayHello")
     public String sayHello(String userName) {
         return helloClient.sayHello(userName);

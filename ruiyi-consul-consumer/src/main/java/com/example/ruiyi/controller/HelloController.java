@@ -27,14 +27,15 @@ import java.util.HashMap;
 @RestController
 public class HelloController {
 
-    @Autowired
-    private LoadBalancerClient loadBalancer;
-
-    @Autowired
-    private DiscoveryClient discoveryClient;
-
-
     private String serviceId = "service-provider";
+
+    private final LoadBalancerClient loadBalancer;
+    private final DiscoveryClient discoveryClient;
+
+    public HelloController(LoadBalancerClient loadBalancer, DiscoveryClient discoveryClient) {
+        this.loadBalancer = loadBalancer;
+        this.discoveryClient = discoveryClient;
+    }
 
     /**
      * 获取所有服务提供者
