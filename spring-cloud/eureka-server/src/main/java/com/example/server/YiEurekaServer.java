@@ -7,13 +7,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@SpringBootApplication
-@EnableEurekaServer
 @RestController
-public class EurekaServerApplication {
+@EnableEurekaServer
+@SpringBootApplication
+public class YiEurekaServer {
 
     public static void main(String[] args) {
-        SpringApplication.run(EurekaServerApplication.class, args);
+        SpringApplication.run(YiEurekaServer.class, args);
     }
 
     @GetMapping("/hello")

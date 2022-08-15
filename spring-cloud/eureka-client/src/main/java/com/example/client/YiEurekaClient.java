@@ -7,12 +7,12 @@ import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-@SpringBootApplication
 @EnableDiscoveryClient
-public class ClientApplication {
+@SpringBootApplication
+public class YiEurekaClient {
 
     public static void main(String[] args) {
-        SpringApplication.run(ClientApplication.class, args);
+        SpringApplication.run(YiEurekaClient.class, args);
     }
 
     @Bean(value = "restTemplate")

@@ -16,7 +16,6 @@ public class HelloController {
     @Value("${server.port}")
     private String port;
 
-
     @RequestMapping("/hello")
     public String hello() {
         return "Hello World" + " ,from " + "application:" + application + " port:" + port;

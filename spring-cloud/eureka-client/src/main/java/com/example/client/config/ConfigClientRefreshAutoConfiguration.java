@@ -34,7 +34,8 @@ public class ConfigClientRefreshAutoConfiguration implements SchedulingConfigure
     @Value("${spring.cloud.config.refreshInterval}")
     private long refreshInterval;
 
-    /**
+
+     /**
      * 刷新的端点
      */
     @Autowired
