@@ -16,12 +16,20 @@ public class HelloController {
     @Autowired
     private LoadBalancerClient loadBalancerClient;
 
+    /*
+     * http://localhost:20000/hello
+     */
     @GetMapping("/hello")
     public String hello() {
         return restTemplate.getForObject("http://provider/" + "hello", String.class);
     }
 
-    @GetMapping("/LoadInstance")
+    /**
+     * http://localhost:20000/instance
+     *
+     * @return
+     */
+    @GetMapping("/instance")
     public String LoadInstance() {
         /* *
          * restTemplate.getForObject()与loadBalancerClient.choose不能放在一个方法中，因为restTemplate.getForObject()包含了choose方法
