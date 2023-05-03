@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- package com.example.ruiyi.demos.nacosdiscoveryconsumer;
+package com.example.ruiyi.demos.nacosdiscoveryconsumer;
 
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Configuration;

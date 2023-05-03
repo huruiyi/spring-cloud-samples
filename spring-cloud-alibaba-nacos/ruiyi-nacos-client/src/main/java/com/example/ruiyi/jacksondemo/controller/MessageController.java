@@ -36,7 +36,7 @@ public class MessageController {
 
     @RequestMapping("/{id}")
     public Message getMessage(@PathVariable Long id) {
-		return this.messageService.get(id);
+        return this.messageService.get(id);
     }
 
 

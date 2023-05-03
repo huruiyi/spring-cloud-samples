@@ -8,7 +8,8 @@ import com.fasterxml.jackson.annotation.JsonView;
 
 public class Message {
 
-    @JsonView(View.Summary.class)//这句话指定了id的视图类型是View.Summary.class。Controller的可以根据视图类来指定输出何种视图。View.Summary.class的定义在view文件夹里。
+    @JsonView(View.Summary.class)
+//这句话指定了id的视图类型是View.Summary.class。Controller的可以根据视图类来指定输出何种视图。View.Summary.class的定义在view文件夹里。
     private Long id;
 
     @JsonView(View.Summary.class)

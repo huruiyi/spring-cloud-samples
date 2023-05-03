@@ -11,7 +11,7 @@ public class RuiyiConfigServerApplication {
     /**
      * http://localhost:8001/config/pro
      * http://localhost:8001/config/dev
-     *
+     * <p>
      * http://localhost:8001/config-pro.properties
      * http://localhost:8001/config-dev.properties
      */

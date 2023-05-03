@@ -35,7 +35,7 @@ public class ConfigClientRefreshAutoConfiguration implements SchedulingConfigure
     private long refreshInterval;
 
 
-     /**
+    /**
      * 刷新的端点
      */
     @Autowired

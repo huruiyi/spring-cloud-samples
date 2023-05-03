@@ -29,7 +29,6 @@ public class ConsumerController1 {
     }
 
 
-
     /**
      * http://localhost:8800/feign/serverInfo
      *

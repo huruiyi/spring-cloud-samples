@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-                <spring-cloud.version>2021.0.7</spring-cloud.version>
+        <spring-cloud.version>2021.0.7</spring-cloud.version>
         <nacos-config.version>2021.1</nacos-config.version>
     </properties>
 
