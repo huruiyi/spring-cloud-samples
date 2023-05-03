@@ -14,7 +14,6 @@ public class RuiyiConfigServerApplication {
      *
      * http://localhost:8001/config-pro.properties
      * http://localhost:8001/config-dev.properties
-     * @param args
      */
     public static void main(String[] args) {
         SpringApplication.run(RuiyiConfigServerApplication.class, args);

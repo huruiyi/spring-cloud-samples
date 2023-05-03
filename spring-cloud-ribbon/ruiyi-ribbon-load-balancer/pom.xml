@@ -15,7 +15,7 @@
     <description>ruiyi-ribbon-load-balancer</description>
     <properties>
         <java.version>1.8</java.version>
-        <spring-cloud.version>2021.0.6</spring-cloud.version>
+                <spring-cloud.version>2021.0.7</spring-cloud.version>
     </properties>
     <dependencies>
         <dependency>
@@ -54,7 +54,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.6.4</version>
+                <version>2.7.11</version>
             </plugin>
         </plugins>
     </build>
