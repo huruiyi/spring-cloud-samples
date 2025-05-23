@@ -13,7 +13,7 @@ public class OrderServiceApplication {
     SpringApplication.run(OrderServiceApplication.class, args);
   }
 
-  @GetMapping("/order")
+  @GetMapping("/orders")
   public String order() {
     return "order-service:Hello World";
   }

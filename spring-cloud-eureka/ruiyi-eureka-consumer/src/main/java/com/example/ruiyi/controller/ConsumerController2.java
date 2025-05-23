@@ -13,35 +13,31 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RequestMapping("/restTemplate")
 public class ConsumerController2 {
 
-    private RestTemplate restTemplate;
+  private final RestTemplate restTemplate;
 
-    public ConsumerController2(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-    }
+  public ConsumerController2(RestTemplate restTemplate) {
+    this.restTemplate = restTemplate;
+  }
 
 
-    /**
-     * http://localhost:8800/restTemplate/sayHello
-     *
-     * @return
-     */
-    @RequestMapping("/sayHello")
-    public String sayHello() {
-        UriComponents uriComponents = UriComponentsBuilder
-                .fromUriString("http://eureka-client-1/sayHello?userName={userName}")
-                .build().expand("ddy")
-                .encode();
-        return restTemplate.getForObject(uriComponents.toUri().toString(), String.class);
-    }
+  /**
+   * http://localhost:8800/restTemplate/sayHello
+   */
+  @RequestMapping("/sayHello")
+  public String sayHello() {
+    UriComponents uriComponents = UriComponentsBuilder
+        .fromUriString("http://eureka-client/sayHello?userName={userName}")
+        .build().expand("ddy")
+        .encode();
+    return restTemplate.getForObject(uriComponents.toUri().toString(), String.class);
+  }
 
-    /**
-     * http://localhost:8800/restTemplate/serverInfo
-     *
-     * @return
-     */
-    @RequestMapping("/serverInfo")
-    public String serverInfo() {
-        return restTemplate.getForObject("http://eureka-client-1/" + "serverInfo", String.class);
-    }
+  /**
+   * http://localhost:8800/restTemplate/serverInfo
+   */
+  @RequestMapping("/serverInfo")
+  public String serverInfo() {
+    return restTemplate.getForObject("http://eureka-client/" + "serverInfo", String.class);
+  }
 
 }

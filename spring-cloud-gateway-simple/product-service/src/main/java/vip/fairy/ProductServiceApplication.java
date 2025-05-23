@@ -13,7 +13,7 @@ public class ProductServiceApplication {
     SpringApplication.run(ProductServiceApplication.class, args);
   }
 
-  @GetMapping("/product")
+  @GetMapping("/products")
   public String product() {
     return "product-service:Hello World";
   }
