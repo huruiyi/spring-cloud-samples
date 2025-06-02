@@ -7,7 +7,6 @@ import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.Customizer;
-import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity.CsrfSpec;
 import org.springframework.security.core.userdetails.MapReactiveUserDetailsService;
@@ -21,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class SpringCloudGatewayStandaloneApplication {
 
- @RequestMapping("/circuitbreakerfallback")
+  @RequestMapping("/circuitbreakerfallback")
   public String circuitbreakerfallback() {
     //@formatter:off
     return "This is a fallback";
@@ -31,9 +30,22 @@ public class SpringCloudGatewayStandaloneApplication {
   @Bean
   public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
 
-
     return builder.routes()
+        //http://localhost:8080/get
         .route("path_route", r -> r.path("/get").uri("http://httpbin.org"))
+
+        //127.0.0.1 xx.yy.com
+        //http://xx.yy.com:8080/u/huruiyi
+        .route(p -> p.path("/u/**").and()
+            .host("**.yy.com:8080")
+            .uri("https://home.cnblogs.com"))
+        //.uri("https://jsonplaceholder.typicode.com"))
+
+        //http://localhost:8080/headers
+        .route(p -> p.path("/headers")
+            .filters(f -> f.addRequestHeader("myHeader", "myHeaderValue"))
+            .uri("http://httpbin.org:80"))
+
         .route("host_route", r -> r.host("*.myhost.org").uri("http://httpbin.org"))
         .route("rewrite_route",
             r -> r.host("*.rewrite.org")
